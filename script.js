@@ -23,17 +23,25 @@ document.querySelector(".check").addEventListener("click", function () {
   } else if (guess === rand) {
     document.querySelector(
       ".message"
-    ).textContent = `good job the ${rand} is the correct number`;
+    ).textContent = `good job the ${rand} is the correct number and you finishd with ${score}`;
+
+    document.querySelector("body").style.backgroundColor = "#60b347";
+
+    document.querySelector(".number").style.width = "60rem";
   } else if (guess < rand) {
     document.querySelector(
       ".message"
-    ).textContent = `the ${guess} is lower than the secret number`;
+    ).textContent = `the ${guess} is greater than the secret number and you have still ${score} lives`;
     score--;
     document.querySelector(".score").textContent = score;
   } else {
     document.querySelector(
       ".message"
-    ).textContent = `the ${guess} is greater than the secret number`;
+    ).textContent = `the ${guess} is greater than the secret number and you have still ${score} lives`;
     score--;
+    document.querySelector(".score").textContent = score;
+  }
+  if (score === 0) {
+    document.querySelector(".message").textContent = "you failed";
   }
 });
