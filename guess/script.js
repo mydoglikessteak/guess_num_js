@@ -39,12 +39,17 @@ document.querySelector(".check").addEventListener("click", function () {
 
       document.querySelector(".highscore").textContent = highscore;
     }
+    if (score < 0) {
+      displayMessage("loser,pleas press again");
+    }
   } else if (guess !== rand) {
+    score--;
     displayMessage(
       guess > rand
         ? `the ${guess} is bigger than the secret number and you have still ${score} lives`
         : `the ${guess} is lower than the secret number and you have still ${score} lives`
     );
+    document.querySelector(".score").textContent = score;
     // document.querySelector(".message").textContent =
     //     ? `the ${guess} is bigger than the secret number and you have still ${score} lives`
     //     : `the ${guess} is lower than the secret number and you have still ${score} lives`;
