@@ -46,7 +46,6 @@ document.querySelector(".check").addEventListener("click", function () {
         : `the ${guess} is lower than the secret number and you have still ${score} lives`
     );
     // document.querySelector(".message").textContent =
-    //   guess > rand
     //     ? `the ${guess} is bigger than the secret number and you have still ${score} lives`
     //     : `the ${guess} is lower than the secret number and you have still ${score} lives`;
   }
